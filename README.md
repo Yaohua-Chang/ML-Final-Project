@@ -36,8 +36,14 @@ https://www.kaggle.com/c/house-prices-advanced-regression-techniques
     * Root-Mean-Squared-Error (RMSE)
 
 ## Intended experiments
-* What experiments are you planning to run? 
+* What experiments are you planning to run?
+    * data cleaning：some columns have lots of NA,like Alley and/or LotFrontage,I suggest delete that firist. Then remove(or          fill) rows with NA.
+    * EDA and preprocessing: Do some EDA to figure out wheather there's some relationship between features. As test set's label is hiden, we have to use ous train set to evaluate model. Split the training set into three parts, training set, validation set and test set. We can do cross validation and use the test set to predict our model's performence before we use our precious five chance to get the score from test set.  
+    * feature selection: As we can see there are many features in this dataset.Random forest can be used to do feature selection to remove least important features. 
+    * train model : Random forest already build a model for us, then we can try gradient boosting, and also some other regression. Or maybe we can do some classification like KNN on some features to give the general range of price then use regression on other features to adjust it. We can try which one works better.
+    * tune and evaluate model: Use grid search to tune hyperparameters and choose the best model and best hyperparameters to do predict on our own test set. If we get an acceptable score(RMSE), we can move on to submit our prediction on real test set and compare with other team's score.
 * How do you plan to evaluate your machine learning algorithm? 
+    * Root-Mean-Squared-Error (RMSE)：the challenge give us five chances to submit our prediction, and judge it by the RMSE of test set. According to other team's scores, top 50th are all get less than 0.107 among 4014 attempts. Let's see if we can do better than that!(first one get a 0 which is almost impossible...)
 
 
 
