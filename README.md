@@ -3,6 +3,8 @@
 Predict sales prices and practice feature engineering.
 
 ## Summary
+Dataset from Kaggele:  
+https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
 ## Motivation
 * What problem are you tackling?   
