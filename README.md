@@ -2,6 +2,11 @@
 
 Predict sales prices and practice feature engineering.
 
+Group Members:
+* Wenyu Fan
+* Tamer Ibranhim
+* Yaohua Chang
+
 ## Summary
 Dataset from Kaggele:  
 https://www.kaggle.com/c/house-prices-advanced-regression-techniques
