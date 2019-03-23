@@ -21,7 +21,13 @@ https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 * The document is really detailed.
 
 * The community concerning this dataset is large.
- 
+
+## Problems 
+*  The first should be a pretty straightforward classification problem 
+
+* The next problem would be a bit more challenging with almost the same data, perhaps a regression or just a more challenging classification problem. 
+
+* A more speculative thing might be a clustering problem with some investigation of what the clusters (or dimension reduction), might mean. 
 
 ## Method
 *  What machine learning techniques are you planning to apply or improve upon? 
