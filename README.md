@@ -32,7 +32,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 * Creating new features
     * Creation of features for different basement finish types.
 
-* transform target variable into normal distribution
+* Transform target variable into normal distribution
 
 * Remove outliers
 
