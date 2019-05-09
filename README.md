@@ -1,72 +1,134 @@
 # House Prices: Advanced Regression Techniques
 
-## Abstract
-Predict sales prices with advanced regression techniques and practice feature engineering.
+Predict sales prices and practice feature engineering.
 
-## Introduction
-This is our team's final project for Applied Machine Learning course. This team is consisted of Wenyu Fan, Tamer Ibranhim and Yaohua Chang. 
+Group Members:
+* Wenyu Fan
+* Tamer Ibranhim
+* Yaohua Chang
 
-## Background
-This dataset was constructed by Dean De Cock for use in Data Science education. It is viewed as a modern alternative to the Boston Housing dataset.
-
-This dataset iseasy to understand so that we can put most time on studying and applying machine learning techniques rather than trying to understand it.
-
-In addition, The community concerning this dataset is large so that we can study lots of brilliant ideas from there.
-
-## Data
+## Summary
 Dataset from Kaggele:  
 https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
-With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this project challenges us to predict the final price of each home.
+## Motivation
+* What problem are you tackling?   
+    - With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this project challenges us to predict the final price of each home.
+
+* Is this an application or a theoretical result?   
+    - It is a application result.
+
+* The document is really detailed.
+
+* The community concerning this dataset is large.
+
+## Problems 
+*  The first should be a pretty straightforward classification problem 
+
+* The next problem would be a bit more challenging with almost the same data, perhaps a regression or just a more challenging classification problem. 
+
+* A more speculative thing might be a clustering problem with some investigation of what the clusters (or dimension reduction), might mean. 
 
 ## Method
-### Data Preprocessing
-* Dealing with missing values
-    * Filling LotFrontage NaN values using a linear regression model. 
+*  What machine learning techniques are you planning to apply or improve upon? 
+    * random forest
+    * gradient boosting
+    * Root-Mean-Squared-Error (RMSE)
 
-* Dealing with zeros  
-    Adding dummy variables for features with a lot of zeros to improve model fits.
-
-* Encoding categorical variables
-
-* Creating new features
-    * Creation of features for different basement finish types.
-
-* Transform target variable into normal distribution
-
-* Remove outliers
-
-### Exploratory Data Analysis
-* Distribution of SalePrice for all the features
-
-* Correlation between the features and SalePrice (or each other)
-
-### Feature Selection
-As we can see there are many features in this dataset.Random forest can be used to do feature selection to remove least important features. 
-
-### Fit and Optimise Models
-To avoid repeating code I create a function to perform the fitting process for each model type I try. I use k-fold cross-validation to reduce the chances of overfitting the training data - specifically 5-fold cross-validation repeated 5 times. 
-
-The parameters of each model are optimised using a grid search, and the function returns the best model found and some stats on the model performance.
-
-The models we tried are:
-* Linear Regression:
-    * sklearn.linear_model.Ridge
-    * sklearn.linear_model.Lasso
-    * sklearn.linear_model.ElasticNet
-
-* Support Vector Machines:
-    * sklearn.svm.LinearSVR
-    * sklearn.svm.SVR
-
-* Nearest Neighbours:
-    * sklearn.neighbors.KNearestNeighborsRegressor
-
-* Tree Based:
-    * sklearn.ensemble.RandomForestRegressor
-    * sklearn.ensemble.GradientBoostingRegressor
+## Intended experiments
+* What experiments are you planning to run?
+    * data cleaning：some columns have lots of NA,like Alley and/or LotFrontage,I suggest delete that firist. Then remove(or          fill) rows with NA.
+    * EDA and preprocessing: Do some EDA to figure out wheather there's some relationship between features. As test set's label is hiden, we have to use ous train set to evaluate model. Split the training set into three parts, training set, validation set and test set. We can do cross validation and use the test set to predict our model's performence before we use our precious five chance to get the score from test set.  
+    * feature selection: As we can see there are many features in this dataset.Random forest can be used to do feature selection to remove least important features. 
+    * train model : Random forest already build a model for us, then we can try gradient boosting, and also some other regression. Or maybe we can do some classification like KNN on some features to give the general range of price then use regression on other features to adjust it. We can try which one works better.
+    * tune and evaluate model: Use grid search to tune hyperparameters and choose the best model and best hyperparameters to do predict on our own test set. If we get an acceptable score(RMSE), we can move on to submit our prediction on real test set and compare with other team's score.
+* How do you plan to evaluate your machine learning algorithm? 
+    * Root-Mean-Squared-Error (RMSE)：the challenge give us five chances to submit our prediction, and judge it by the RMSE of test set. According to other team's scores, top 50th are all get less than 0.107 among 4014 attempts. Let's see if we can do better than that!(first one get a 0 which is almost impossible...)
 
 
-## Evaluation
 
-## Conclusion
+
+## Data Description
+
+Here's a brief version of what you'll find in the data description file.
+
+* SalePrice - the property's sale price in dollars. This is the target variable that you're trying to predict.
+* MSSubClass: The building class
+* MSZoning: The general zoning classification
+* LotFrontage: Linear feet of street connected to property
+* LotArea: Lot size in square feet
+* Street: Type of road access
+* Alley: Type of alley access
+* LotShape: General shape of property
+* LandContour: Flatness of the property
+* Utilities: Type of utilities available
+* LotConfig: Lot configuration
+* LandSlope: Slope of property
+* Neighborhood: Physical locations within Ames city limits
+* Condition1: Proximity to main road or railroad
+* Condition2: Proximity to main road or railroad (if a second is present)
+* BldgType: Type of dwelling
+* HouseStyle: Style of dwelling
+* OverallQual: Overall material and finish quality
+* OverallCond: Overall condition rating
+* YearBuilt: Original construction date
+* YearRemodAdd: Remodel date
+* RoofStyle: Type of roof
+* RoofMatl: Roof material
+* Exterior1st: Exterior covering on house
+* Exterior2nd: Exterior covering on house (if more than one material)
+* MasVnrType: Masonry veneer type
+* MasVnrArea: Masonry veneer area in square feet
+* ExterQual: Exterior material quality
+* ExterCond: Present condition of the material on the exterior
+* Foundation: Type of foundation
+* BsmtQual: Height of the basement
+* BsmtCond: General condition of the basement
+* BsmtExposure: Walkout or garden level basement walls
+* BsmtFinType1: Quality of basement finished area
+* BsmtFinSF1: Type 1 finished square feet
+* BsmtFinType2: Quality of second finished area (if present)
+* BsmtFinSF2: Type 2 finished square feet
+* BsmtUnfSF: Unfinished square feet of basement area
+* TotalBsmtSF: Total square feet of basement area
+* Heating: Type of heating
+* HeatingQC: Heating quality and condition
+* CentralAir: Central air conditioning
+* Electrical: Electrical system
+* 1stFlrSF: First Floor square feet
+* 2ndFlrSF: Second floor square feet
+* LowQualFinSF: Low quality finished square feet (all floors)
+* GrLivArea: Above grade (ground) living area square feet
+* BsmtFullBath: Basement full bathrooms
+* BsmtHalfBath: Basement half bathrooms
+* FullBath: Full bathrooms above grade
+* HalfBath: Half baths above grade
+* Bedroom: Number of bedrooms above basement level
+* Kitchen: Number of kitchens
+* KitchenQual: Kitchen quality
+* TotRmsAbvGrd: Total rooms above grade (does not include bathrooms)
+* Functional: Home functionality rating
+* Fireplaces: Number of fireplaces
+* FireplaceQu: Fireplace quality
+* GarageType: Garage location
+* GarageYrBlt: Year garage was built
+* GarageFinish: Interior finish of the garage
+* GarageCars: Size of garage in car capacity
+* GarageArea: Size of garage in square feet
+* GarageQual: Garage quality
+* GarageCond: Garage condition
+* PavedDrive: Paved driveway
+* WoodDeckSF: Wood deck area in square feet
+* OpenPorchSF: Open porch area in square feet
+* EnclosedPorch: Enclosed porch area in square feet
+* 3SsnPorch: Three season porch area in square feet
+* ScreenPorch: Screen porch area in square feet
+* PoolArea: Pool area in square feet
+* PoolQC: Pool quality
+* Fence: Fence quality
+* MiscFeature: Miscellaneous feature not covered in other categories
+* MiscVal: $Value of miscellaneous feature
+* MoSold: Month Sold
+* YrSold: Year Sold
+* SaleType: Type of sale
+* SaleCondition: Condition of sale
