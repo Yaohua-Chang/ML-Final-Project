@@ -90,6 +90,8 @@ The models we tried are:
 ## Conclusion
 * We applied sveral algorithms in this project including Lasso, Ridge, Elastic Net, SVM, Neural Networks, Random Forest.
 
-* After removing outliers which identified by Ridge, the RMSE has slightly deceased.
+* After removing outliers which identified by Ridge, the MAS has slightly been deceased.
+
+* Using log of the sale price as target value to train models, the R2 has slightly been increased.
 
 * Random Forest perfroms best among all models, then linear regression models, then SVM and Neural Networks.
