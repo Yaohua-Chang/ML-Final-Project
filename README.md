@@ -83,15 +83,15 @@ The models we tried are:
 | Ridge  | 0.96326875 | 0.05546042 |
 | Elastic Net | 0.9473058 | 0.07037367 |
 | SVM | 0.932746 | 0.091442938 | 
-| Neural Networks |   |  
 | Random Forest | 0.9877892 | 0.03351962 |
 
 
 ## Conclusion
 * We applied sveral algorithms in this project including Lasso, Ridge, Elastic Net, SVM, Neural Networks, Random Forest.
 
-* After removing outliers which identified by Ridge, the MAS has slightly been deceased.
+* After removing outliers which identified by Ridge, the MAS has slightly been decreased.
 
 * Using log of the sale price as target value to train models, the R2 has slightly been increased.
 
-* Random Forest perfroms best among all models, then linear regression models, then SVM and Neural Networks.
+* Random Forest perfroms best among all models, then linear regression models, then SVM.
+* Neural Network gives a very bad results, we should do feature engineering use some advanced tools to imporove the NN performance. 
