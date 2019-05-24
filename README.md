@@ -59,31 +59,37 @@ The models we tried are:
     * sklearn.svm.LinearSVR
     * sklearn.svm.SVR
 
-* Nearest Neighbours:
-    * sklearn.neighbors.KNearestNeighborsRegressor
-
 * Tree Based:
     * sklearn.ensemble.RandomForestRegressor
-    * sklearn.ensemble.GradientBoostingRegressor
+
+* Neural Networks:
+    * keras
 
 
 ## Evaluation
-### Compare Model with log(y)
-|  Model   | Correlation | R square (R2) | Root Mean Square Error (RMSE)
-| ----------- | ----------- | ----------- | ----------- |
-| Ridge | 0.98147165 | 0.96326875 | 0.05546042 |
-| Elastic Net | 0.97362819 | 0.9473058 | 0.07037367 |
-| Random Forest | 0.99492623 | 0.9877892 | 0.03351962 |
+### Compare Model with actual sale price
+|  Model | R square (R2) | Mean absolute error (MAS)
+| ----------- | ----------- | ----------- |
+| Lasso | 0.883223 | 19150.15 |
+| Ridge | 0.95590900 | 11291.2240 |
+| Elastic Net | 0.91388614 | 15122.4778 |
+| SVM |0.860785143 | 18799.0263
+| Neural Networks | 0.868273 | 19768.23857
+| Random Forest | 0.98622979 | 5580.97214 |
 
-### Compare Model without log(y)
-|  Model   | Correlation | R square (R2) | Root Mean Square Error (RMSE)
-| ----------- | ----------- | ----------- | ----------- |
-| Ridge | 0.9777374 | 0.95590900 | 11291.2240 |
-| Elastic Net | 0.9560788 | 0.91388614 | 15122.4778 |
-| Random Forest | 0.99465395 | 0.98622979 | 5580.97214 |
+### Compare Model with  log of the sale price
+|  Model | R square (R2) | Mean absolute error (MAS)
+| ----------- | ----------- | ----------- |
+| Lasso | 0.902168 | 0.124385 |
+| Ridge  | 0.96326875 | 0.05546042 |
+| Elastic Net | 0.9473058 | 0.07037367 |
+| SVM | 0.932746 | 0.091442938 | 
+| Neural Networks |   |  
+| Random Forest | 0.9877892 | 0.03351962 |
+
 
 ## Conclusion
-* We applied sveral algorithms in this project including Ridge, Lasso, Elastic Net, SVM, Nearest Neighbor, Random Forest.
+* We applied sveral algorithms in this project including Lasso, Ridge, Elastic Net, SVM, Neural Networks, Random Forest.
 
 * After removing outliers which identified by Ridge, the RMSE has slightly deceased.
 
