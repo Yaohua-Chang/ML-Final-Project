@@ -68,5 +68,23 @@ The models we tried are:
 
 
 ## Evaluation
+### Compare Model with log(y)
+|  Model   | Correlation | R square (R2) | Root Mean Square Error (RMSE)
+| ----------- | ----------- | ----------- | ----------- |
+| Ridge | 0.98147165 | 0.96326875 | 0.05546042 |
+| Elastic Net | 0.97362819 | 0.9473058 | 0.07037367 |
+| Random Forest | 0.99492623 | 0.9877892 | 0.03351962 |
+
+### Compare Model without log(y)
+|  Model   | Correlation | R square (R2) | Root Mean Square Error (RMSE)
+| ----------- | ----------- | ----------- | ----------- |
+| Ridge | 0.9777374 | 0.95590900 | 11291.2240 |
+| Elastic Net | 0.9560788 | 0.91388614 | 15122.4778 |
+| Random Forest | 0.99465395 | 0.98622979 | 5580.97214 |
 
 ## Conclusion
+* We applied sveral algorithms in this project including Ridge, Lasso, Elastic Net, SVM, Nearest Neighbor, Random Forest.
+
+* After removing outliers which identified by Ridge, the RMSE has slightly deceased.
+
+* Random Forest has better R2 and RMSE, but Elastic Net have better cross-validation scores.
