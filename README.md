@@ -92,4 +92,4 @@ The models we tried are:
 
 * After removing outliers which identified by Ridge, the RMSE has slightly deceased.
 
-* Random Forest has better R2 and RMSE compared with other models.
+* Random Forest has the best R2 and RMSE among all models.
