@@ -56,7 +56,6 @@ The models we tried are:
     * sklearn.linear_model.ElasticNet
 
 * Support Vector Machines:
-    * sklearn.svm.LinearSVR
     * sklearn.svm.SVR
 
 * Tree Based:
@@ -93,4 +92,4 @@ The models we tried are:
 
 * After removing outliers which identified by Ridge, the RMSE has slightly deceased.
 
-* Random Forest has better R2 and RMSE, but Elastic Net have better cross-validation scores.
+* Random Forest has better R2 and RMSE compared with other models.
