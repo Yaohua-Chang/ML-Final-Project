@@ -92,4 +92,4 @@ The models we tried are:
 
 * After removing outliers which identified by Ridge, the RMSE has slightly deceased.
 
-* Random Forest has the best R2 and RMSE among all models.
+* Random Forest perfroms best among all models, then linear regression models, then SVM and Neural Networks.
